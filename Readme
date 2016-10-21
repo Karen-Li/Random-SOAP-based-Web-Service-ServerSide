@@ -1,0 +1,11 @@
+ant -Dwar.name=rand deploy
+
+curl http://localhost:8080/rand?wsdl
+This command returns the WSDL associated with the service.
+curl http://localhost:8080/rand?xsd=1
+This command returns the XML Schema associated with the service.
+
+
+The client in the random project can be modified to go against the Tomcat-deployed version by changing the URLs.
+
+
