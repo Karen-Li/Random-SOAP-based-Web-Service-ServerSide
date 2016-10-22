@@ -1,15 +1,18 @@
 Two configuration files are needed to deploy web service.
 
 web.xml:
-- WSServletContextListener: parses sun-jaxws.xml
-- WSServlet: dispatches incoming requests /* to RandService
+- Load a WSServletContextListener to parses sun-jaxws.xml
+- Load a WSServlet to dispatch incoming requests
 sun-jaxws.xml:
-dispatches incoming requests /* to RandService
+- dispatch all incoming requests to RandService
 
 RandService can be deployed by:
 ant -Dwar.name=rand deploy
 
+
 Once deployed:
+
+curl http://localhost:8080/rand?xsdl
 returns the WSDL associated with the service.
 curl http://localhost:8080/rand?xsd=1
 returns the XML Schema associated with the service.
